@@ -1,0 +1,88 @@
+/* Input and button styling */
+body{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+    
+}
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+  }
+  
+  button {
+    padding: 2px 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* List item styling */
+  li {
+    margin-bottom: 8px;
+    /* margin-right: 20px; */
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .second{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .editBtn {
+    margin-right: 4px;
+    background-color: #fdd835;
+    color: #0a0808;
+  }
+  
+  .deleteBtn {
+    margin-left: 4px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+ 
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 20px;
+    background-color: beige;
+    /* width: 50%; */
+    border: none;
+    margin: 0 auto; 
+  }
+  
+  
+  .form input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+  
+  .form button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
