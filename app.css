@@ -1,7 +1,10 @@
-/* Input and button styling */
+
 body{
     margin: 0;
     padding: 0;
+}
+h1{
+  align-items: center;
 }
 .box{
     display: flex;
