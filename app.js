@@ -34,18 +34,18 @@ addBtn.addEventListener("click", () => {
 
 function renderFunction(task) {
   let res = document.createElement("li");
-  let edit = document.createElement('button');
+  let editTask = document.createElement('button');
   let deleteBtn = document.createElement("button");
   let divButtons=document.createElement('div')
-  edit.innerHTML = '<i class="fas fa-edit"></i>';
+  editTask.innerHTML = '<i class="fas fa-edit"></i>';
   deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>'
-  edit.classList.add('editBtn');
+  editTask.classList.add('editBtn');
   deleteBtn.classList.add("deleteBtn");
 
 divButtons.classList.add('divButton')
 
   res.textContent = task;
-  divButtons.appendChild(edit)
+  divButtons.appendChild(editTask)
   divButtons.appendChild(deleteBtn)
   // res.appendChild(edit);
   // res.appendChild(deleteBtn);
@@ -57,8 +57,9 @@ divButtons.classList.add('divButton')
     res.remove();
   });
 
-  edit.addEventListener('click', (e) => {
+  editTask.addEventListener('click', (e) => {
     let form = document.createElement('form');
+    
     if (editForm) {
       editForm.remove(); 
     }
@@ -86,6 +87,7 @@ divButtons.classList.add('divButton')
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      
       let newInput = editInput.value;
       let data = JSON.parse(localStorage.getItem('data'));
       for (let i = 0; i < data.length; i++) {
@@ -93,7 +95,8 @@ divButtons.classList.add('divButton')
           if (newInput) {
             data[i] = newInput;
             res.textContent = newInput;
-             res.appendChild(edit);
+             res.appendChild(editTask);
+             res.removeChild(editTask);
               res.appendChild(deleteBtn);
             localStorage.setItem('data', JSON.stringify(data));
           }
