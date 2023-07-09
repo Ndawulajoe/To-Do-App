@@ -1,0 +1,47 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .second{
+ 
+  }
+
+  @media only screen and (max-width: 1368px) {
+    .second {
+        max-width:fit-content;
+    }
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  li .editBtn,
+  li .deleteBtn {
+    padding: 5px;
+    margin-left: 5px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+  
+  li .editBtn:hover,
+  li .deleteBtn:hover {
+    background-color: #ccc;
+  }
+  
+  .fa-edit,
+  .fa-trash-alt {
+    color: #333;
+  }
+  
+  .fa-edit:hover,
+  .fa-trash-alt:hover {
+    color: #111;
+  }
+  
