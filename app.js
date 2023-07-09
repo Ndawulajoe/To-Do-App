@@ -1,15 +1,18 @@
 
 let inputValues = document.querySelector("input");
-let btn = document.querySelector("button");
-let resultsRender = document.querySelector(".second");
+let addBtn = document.querySelector("button");
+let resultsRender = document.querySelector(".tasks");
 let body = document.querySelector('body');
-let editForm =''
 
-btn.addEventListener("click", () => {
-  let value = inputValues.value;
+let container=document.querySelector('.box')
+
+let editForm =null
+
+addBtn.addEventListener("click", () => {
+  let task = inputValues.value;
   inputValues.value = "";
 
-  renderFunction(value);
+  renderFunction(task);
   
   function storeData() {
     // let data=JSON.stringify(value);
@@ -21,7 +24,7 @@ btn.addEventListener("click", () => {
       dataArr = JSON.parse(data);
     }
 
-    dataArr.push(value);
+    dataArr.push(task);
 
     localStorage.setItem("data", JSON.stringify(dataArr));
   }
@@ -29,7 +32,7 @@ btn.addEventListener("click", () => {
   storeData();
 });
 
-function renderFunction(value) {
+function renderFunction(task) {
   let res = document.createElement("li");
   let edit = document.createElement('button');
   let deleteBtn = document.createElement("button");
@@ -39,13 +42,9 @@ function renderFunction(value) {
   edit.classList.add('editBtn');
   deleteBtn.classList.add("deleteBtn");
 
-divButtons.classList.add('divButtons')
-  
-  
-  
+divButtons.classList.add('divButton')
 
-  
-  res.textContent = value;
+  res.textContent = task;
   divButtons.appendChild(edit)
   divButtons.appendChild(deleteBtn)
   // res.appendChild(edit);
@@ -59,34 +58,38 @@ divButtons.classList.add('divButtons')
   });
 
   edit.addEventListener('click', (e) => {
-    
+    let form = document.createElement('form');
     if (editForm) {
       editForm.remove(); 
     }
     let listItem = e.target.closest('li').innerText
 
-  console.log(listItem)
-    let form = document.createElement('form');
+ 
+    
     form.classList.add('form');
+    
     let editInput = document.createElement('input');
     
       editInput.setAttribute('placeholder', `${listItem}`);
     
     
     let editButton = document.createElement('button');
+    editButton.classList.add('update-btn')
     editButton.textContent = 'Update';
     form.appendChild(editInput);
     form.appendChild(editButton);
-    body.appendChild(form);
+    container.appendChild(form);
+    // body.appendChild(form)
+
 
     editForm = form; 
 
     form.addEventListener('submit', (e) => {
-      // e.preventDefault();
+      e.preventDefault();
       let newInput = editInput.value;
       let data = JSON.parse(localStorage.getItem('data'));
       for (let i = 0; i < data.length; i++) {
-        if (data[i] === value) {
+        if (data[i] === task) {
           if (newInput) {
             data[i] = newInput;
             res.textContent = newInput;
@@ -96,16 +99,16 @@ divButtons.classList.add('divButtons')
           }
         }
       }
-      form.remove(); 
-      editForm = null; 
+      // form.remove(); 
+      // editForm = null; 
     });
   });
 }
 
-function deleteItem(value) {
+function deleteItem(task) {
   let data = JSON.parse(localStorage.getItem("data"));
   for (let i = 0; i < data.length; i++) {
-    if (data[i] === value) {
+    if (data[i] === task) {
       data.splice(i, 1);
     }
   }
@@ -122,3 +125,5 @@ function afterRefresh() {
 }
 
 afterRefresh();
+
+

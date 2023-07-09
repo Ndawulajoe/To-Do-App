@@ -1,47 +1,98 @@
-ul {
-    list-style-type: none;
+body{
+    margin: 0;
     padding: 0;
-  }
-  .second{
- 
-  }
-
-  @media only screen and (max-width: 1368px) {
-    .second {
-        max-width:fit-content;
-    }
-  }
-  li {
+    /* background-color: #594032; */
+    /* overflow:scroll; */
+}
+  
+.box{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: #f0f0f0;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: antiquewhite;
+    margin: 50px;
+    padding: 50px;
+    border-radius: 10px;
+}
+.tasks{
+   background-color: #594032; 
+   border-radius: 10px;
+   padding: 10px;
+   box-shadow: 4px 6px 6px rgba(10, 10, 10, 0.4);
+}
+li{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    /* background-color: rgb(242, 241, 240); */
     border-radius: 5px;
-  }
-  
-  li .editBtn,
-  li .deleteBtn {
-    padding: 5px;
-    margin-left: 5px;
-    background-color: #ddd;
+    justify-content: space-between;
+    gap: 100px;
+    font-size: 20px;
+}
+div.divButton{
+   
+}
+.editBtn{
+border: none;
+/* margin-left: 5px; */
+background-color: darkgray;
+border-radius: 5px;
+align-items: center;
+color: white;
+}
+.deleteBtn{
     border: none;
+    margin-left: 5px;
+    background-color: darkgray;
+    border-radius: 5px;
+    align-items: center;
+    color: white;
+}
+.update-btn,.add-btn{
+    border: none;
+    border-radius: 20px;
+    
+}
+.update-btn{
+    margin-left: 10px;
+}
+input{
+    border: none;
+    background-color:whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+h1{
+    text-decoration: underline;
+    font-family: Georgia, Arial and Helvetica;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+}
+button:hover{
+    background-color: #594032;
+    color: white;
     cursor: pointer;
+
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+      font-size: 14px;
+      background-color: blue;
+    }
+    li{
+    gap: 10px;
+    }
+    .editBtn{
+
+    }
+    .deleteBtn{
+
+    }
   }
-  
-  li .editBtn:hover,
-  li .deleteBtn:hover {
-    background-color: #ccc;
-  }
-  
-  .fa-edit,
-  .fa-trash-alt {
-    color: #333;
-  }
-  
-  .fa-edit:hover,
-  .fa-trash-alt:hover {
-    color: #111;
-  }
-  
+ 
