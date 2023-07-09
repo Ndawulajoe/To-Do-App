@@ -15,8 +15,6 @@ addBtn.addEventListener("click", () => {
   renderFunction(task);
   
   function storeData() {
-    // let data=JSON.stringify(value);
-    // localStorage.setItem('value',data)
     let data = localStorage.getItem("data");
     let dataArr = [];
 
@@ -47,14 +45,19 @@ divButtons.classList.add('divButton')
   res.textContent = task;
   divButtons.appendChild(editTask)
   divButtons.appendChild(deleteBtn)
-  // res.appendChild(edit);
-  // res.appendChild(deleteBtn);
   res.appendChild(divButtons)
   resultsRender.appendChild(res);
 
   deleteBtn.addEventListener('click', () => {
-    deleteItem(value);
+    let data=JSON.parse(localStorage.getItem('data'))
+    for(let i=0;i<data.length;i++){
+      if(data[i]===task){
+        data.splice(i,1)
+      }
+    }
+    localStorage.setItem('data',JSON.stringify(data))
     res.remove();
+  
   });
 
   editTask.addEventListener('click', (e) => {
@@ -80,7 +83,7 @@ divButtons.classList.add('divButton')
     form.appendChild(editInput);
     form.appendChild(editButton);
     container.appendChild(form);
-    // body.appendChild(form)
+   
 
 
     editForm = form; 
@@ -102,8 +105,7 @@ divButtons.classList.add('divButton')
           }
         }
       }
-      // form.remove(); 
-      // editForm = null; 
+  
     });
   });
 }
