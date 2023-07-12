@@ -83,16 +83,25 @@ button:hover{
 @media only screen and (max-width: 480px) {
     body {
       font-size: 14px;
-      background-color: blue;
+      background-color: rgb(111, 111, 112);
     }
-    li{
-    gap: 10px;
+    .box{
+        display: flex; 
+        align-items: center; 
+         text-align: center; 
+         flex-direction: column; 
+         justify-content: center; 
+         background-color: antiquewhite; 
+         margin: 50px; 
+         padding: 50px;
+         border-radius: 10px;
     }
-    .editBtn{
-
+    .tasks{
+        background-color: #594032;  
+        border-radius: 10px; 
+        padding: 10px; 
+        box-shadow: 4px 6px 6px rgba(10, 10, 10, 0.4); 
     }
-    .deleteBtn{
-
-    }
+   
   }
  

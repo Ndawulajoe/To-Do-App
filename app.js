@@ -2,6 +2,9 @@
 let inputValues = document.querySelector("input");
 let addBtn = document.querySelector("button");
 let resultsRender = document.querySelector(".tasks");
+// if(tasks===''){
+//   tasks.style.backgroundColor='red'
+// }
 let body = document.querySelector('body');
 
 let container=document.querySelector('.box')
@@ -15,23 +18,19 @@ addBtn.addEventListener("click", () => {
   renderFunction(task);
   
   function storeData() {
-    let data = localStorage.getItem("data");
-    let dataArr = [];
-
-    if (data) {
-      dataArr = JSON.parse(data);
-    }
-
-    dataArr.push(task);
-
-    localStorage.setItem("data", JSON.stringify(dataArr));
+    let data = JSON.parse(localStorage.getItem("data"));
+  if(data===null){
+    data=[]
+  }
+  data.push(task)
+    localStorage.setItem("data", JSON.stringify(data));
   }
 
   storeData();
 });
 
 function renderFunction(task) {
-  let res = document.createElement("li");
+  let taskResult = document.createElement("li");
   let editTask = document.createElement('button');
   let deleteBtn = document.createElement("button");
   let divButtons=document.createElement('div')
@@ -42,11 +41,11 @@ function renderFunction(task) {
 
 divButtons.classList.add('divButton')
 
-  res.textContent = task;
+  taskResult.textContent = task;
   divButtons.appendChild(editTask)
   divButtons.appendChild(deleteBtn)
-  res.appendChild(divButtons)
-  resultsRender.appendChild(res);
+  taskResult.appendChild(divButtons)
+  resultsRender.appendChild(taskResult);
 
   deleteBtn.addEventListener('click', () => {
     let data=JSON.parse(localStorage.getItem('data'))
@@ -56,7 +55,7 @@ divButtons.classList.add('divButton')
       }
     }
     localStorage.setItem('data',JSON.stringify(data))
-    res.remove();
+    taskResult.remove();
   
   });
 
@@ -97,10 +96,10 @@ divButtons.classList.add('divButton')
         if (data[i] === task) {
           if (newInput) {
             data[i] = newInput;
-            res.textContent = newInput;
-             res.appendChild(editTask);
-             res.removeChild(editTask);
-              res.appendChild(deleteBtn);
+            taskResult.textContent = newInput;
+             taskResult.appendChild(editTask);
+             taskResult.removeChild(editTask);
+              taskResult.appendChild(deleteBtn);
             localStorage.setItem('data', JSON.stringify(data));
           }
         }
