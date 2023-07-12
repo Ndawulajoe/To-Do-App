@@ -73,8 +73,9 @@ divButtons.classList.add('divButton')
     
     let editInput = document.createElement('input');
     
-      editInput.setAttribute('placeholder', `${listItem}`);
+    editInput.setAttribute('placeholder', `${listItem}`);
     
+      // editInput.setAttribute('autofocus')
     
     let editButton = document.createElement('button');
     editButton.classList.add('update-btn')
