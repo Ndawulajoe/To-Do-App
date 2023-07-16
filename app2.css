@@ -1,105 +1,79 @@
-body{
+body {
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    /* background-color: #594032; */
-    /* overflow:scroll; */
-}
-  
-.box{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    /* background-color: antiquewhite; */
-    background-color: white;
-    margin: 50px;
-    padding: 50px;
-    border-radius: 10px;
-}
-.tasks{
-   background-color: #594032; 
-   border-radius: 10px;
-   padding: 10px;
-   box-shadow: 4px 6px 6px rgba(10, 10, 10, 0.4);
-}
-li{
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-    /* background-color: rgb(242, 241, 240); */
-    border-radius: 5px;
-    justify-content: space-between;
-    gap: 100px;
-    font-size: 20px;
-}
-.editBtn{
-border: none;
-/* margin-left: 5px; */
-background-color: darkgray;
-border-radius: 5px;
-align-items: center;
-color: white;
-}
-.deleteBtn{
-    border: none;
-    margin-left: 5px;
-    background-color: darkgray;
-    border-radius: 5px;
-    align-items: center;
-    color: white;
-}
-.update-btn,.add-btn{
-    border: none;
-    border-radius: 20px;
-    
-}
-.update-btn{
-    margin-left: 10px;
-}
-input{
-    border: none;
-    background-color:whitesmoke;
-    padding: 10px;
-    border-radius: 5px;
-}
-h1{
-    text-decoration: underline;
-    font-family: Georgia, Arial and Helvetica;
-    /* border: 1px solid black; */
-    border-radius: 10px;
-}
-button:hover{
-    background-color: #594032;
-    color: white;
-    cursor: pointer;
-
-}
-
-@media only screen and (max-width: 480px) {
-    body {
-      font-size: 12px;
-      background-color: rgb(111, 111, 112);
-    }
-    .box{
-        display: flex; 
-        align-items: center; 
-         text-align: center; 
-         flex-direction: column; 
-         justify-content: center; 
-         background-color: white; 
-         margin: 25px; 
-         padding: 25px;
-         border-radius: 10px;
-    }
-    .tasks{
-        background-color: #594032;  
-        border-radius: 10px; 
-        padding: 10px; 
-        box-shadow: 0px 0px 0px; 
-    }
-   
   }
- 
+  input{
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  .box {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .tasks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tasks li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tasks li .divButton {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    border: none;
+  }
+  
+  .editBtn {
+    cursor: pointer;
+    font-size: 10px;
+  }
+  
+  .deleteBtn {
+    cursor: pointer;
+    font-size: 10px;
+  }
+  
+  .update-btn {
+    margin-top: 10px;
+    border: none;
+    /* background-color: #000; */
+    color: #000000;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f7f7f7;
+    border-top: 1px solid #ccc;
+    padding: 5px;
+  }
+  
+  .buttons .editBtn,
+  .buttons .deleteBtn {
+    background-color: #ff8080; /* Attracting color */
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttons .editBtn:hover,
+  .buttons .deleteBtn:hover {
+    background-color: #ff9999; /* Attracting color on hover */
+  }
+  

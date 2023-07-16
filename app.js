@@ -9,7 +9,7 @@ let body = document.querySelector('body');
 
 let container=document.querySelector('.box')
 
-let editForm =null
+let editForm =null;
 
 addBtn.addEventListener("click", () => {
   let task = inputValues.value;
@@ -59,6 +59,7 @@ divButtons.classList.add('divButton')
   
   });
 
+
   editTask.addEventListener('click', (e) => {
     let form = document.createElement('form');
     
@@ -89,7 +90,7 @@ divButtons.classList.add('divButton')
     editForm = form; 
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       
       let newInput = editInput.value;
       let data = JSON.parse(localStorage.getItem('data'));
